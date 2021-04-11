@@ -12,16 +12,13 @@
  *
  */
 function findIndex(array, value) {
-  const mid = Math.ceil(array.length / 2);
+  const mid = value < array.length ? value : array.length - 1;
   let res = 0;
 
-  if (value <= array[mid]) {
-    for (let i = mid; i > 0; i--) {
-      if (array[i] === value) res = i;
-    }
-  } else {
-    for (let i = mid; i < array.length; i++) {
-      if (array[i] === value) res = i;
+  for (let i = mid; i > 0; i--) {
+    if (array[i] === value) {
+      res = i;
+      break;
     }
   }
 
