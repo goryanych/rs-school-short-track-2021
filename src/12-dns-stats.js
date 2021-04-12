@@ -28,11 +28,9 @@ function getDNSStats(domains) {
     const out = domains[i].split('.').reverse();
 
     for (let j = 0; j < out.length; j++) {
-      let count = 1;
-
       str += `.${out[j]}`;
 
-      if (obj[str]) obj[str] = ++count;
+      if (obj[str]) obj[str]++;
       else obj[str] = 1;
     }
   }
